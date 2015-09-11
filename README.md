@@ -17,7 +17,10 @@ possible.
 
 # Credit
 The idea for this project came from [DNZEmptyDataSet](dnz). The code for that
-project is over 900 lines long and did not a single Storyboard. I thought it was
-overdone, so I made a simpler, more visual solution.
+project is over 900 lines long and did not contain a single Storyboard. I
+thought it was overdone, so I made a simpler, more visual solution. My version
+does require that you, the developer, adapt my idea to your project whereas
+[dzenbot's][dzenbot] project allows you to use it immediately.
 
+[dzenbot]: https://github.com/dzenbot
 [dnz]: https://github.com/dzenbot/DZNEmptyDataSet
