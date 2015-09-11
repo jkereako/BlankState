@@ -2,6 +2,10 @@
 Displays a view indicating to the user that no data exists and gives the user an
 option to add data. All of the views are defined in a Storyboard scene.
 
+<img src="https://raw.githubusercontent.com/jkereako/blank-state/master/blank-view.png" alt="Document list" width="320" height="568" />
+
+<img src="https://raw.githubusercontent.com/jkereako/blank-state/master/data-view.png" alt="Document list" width="320" height="568" />
+
 # Usage
 The blank state view must be a `UIView` which is a child view of the main view
 of a `UIViewController`. This must always be the case. Storyboard will not allow
