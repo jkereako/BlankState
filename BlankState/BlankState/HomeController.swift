@@ -17,6 +17,10 @@ class HomeController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    // TODO: Check for presence of data
+    // In your project, this is where you ought to check for the presence of
+    // data. If data exists, then remove the blankStateView from the super view.
+
     model = HomeModel(controller: self)
     tableView?.dataSource = model
   }
@@ -42,8 +46,10 @@ extension HomeController {
       "sem"
     ]
 
-    // In a real project, you ought to move this routine to viewDidLoad() or
-    // viewWillAppear() depending upon your app's implementation.
+    // In a real project, creating data will take you to another view on the 
+    // view hierarchy. Hence, you probably won't need the animations below.
+    // Instead, you would simply call
+    // `self.blankStateView?.removeFromSuperview()` and call it a day.
     if let x = unwrapped.dataSource  where x.count > 1 {
       
       // Fade the blank state view out
@@ -52,7 +58,8 @@ extension HomeController {
         completion: {[unowned self] (aBool: Bool) in
           self.blankStateView?.removeFromSuperview()
 
-          // Reload the table prior to animation
+          // Reload the table prior to animation so it's visible as soon as the
+          // table view is faded in.
           self.tableView?.reloadData()
 
           // Fade the table view in
