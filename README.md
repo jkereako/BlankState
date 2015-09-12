@@ -1,8 +1,3 @@
-# NOTICE
-After trying to use this project in one of my apps, I was met with an error. It complained that "static tableviews are only allowed in table view controllers", thereby nullifying everything this project tries to accomplish. It's unfortunate because I cannot think of another way to combine Storyboards, a `UINavigationController` on which so many apps rely and conditional root view controller. I feel that swapping out a root view controller in runtime is a hack. Views and relationships defined in Storyboard Builder ought to remain unchanged.
-
-**TLDR; this project will only work with dynamic table views.**
-
 # The Blank State
 This project is a simple example of how to communicate to users that no data
 exists. All of the views are defined in a Storyboard scene.
