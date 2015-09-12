@@ -1,3 +1,8 @@
+# NOTICE
+After trying to use this project in one of my apps, I was met with an error. It complained that "static tableviews are only allowed in table view controllers", thereby nullifying everything this project tries to accomplish.
+
+**TLDR; this project will only work with dynamic table views.**
+
 # The Blank State
 This project is a simple example of how to communicate to users that no data
 exists. All of the views are defined in a Storyboard scene.
