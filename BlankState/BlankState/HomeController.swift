@@ -14,10 +14,6 @@ class HomeController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // TODO: Check for presence of data
-    // In your project, this is where you ought to check for the presence of
-    // data. If data exists, then remove the blankStateView from the super view.
-
     model = HomeModel(controller: self)
     tableView?.dataSource = model
   }
@@ -25,6 +21,8 @@ class HomeController: UITableViewController {
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
 
+    // Because the blank state view is presented on top of the root view, we must delay action until
+    // the root view as appeared.
     if let aModel = model where aModel.dataSource == nil {
       let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
 
@@ -36,14 +34,21 @@ class HomeController: UITableViewController {
 
       blank.delegate = self
 
-      // Present the view controller WITHOUT animation to make it seem as if the presented view
-      // controller was actually the root view controller.
+      // Present the view controller WITHOUT animation. This will show the blank state view
+      // immediately, giving the impression that it is actually the root view and not a modal view.
       presentViewController(blank, animated: false, completion: nil)
     }
   }
 }
 
+
+// MARK: - Create data delegate
 extension HomeController: CreateDataDelegate {
+
+  // Respond to an event sent by the blank state view and, if necessary, remove the blank state view
+  // from the view controller stack *the same way it was presented*. In this case, because we
+  // presented the blank state view with `presentViewController(completion:)`, we must remove it
+  // with `dismissViewControllerAnimated(completion:)`
   func createData(sender sender: BlankController) {
     guard let aModel = model else {
       assertionFailure("\n\n  Model is nil.\n\n")

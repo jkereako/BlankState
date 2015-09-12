@@ -8,6 +8,7 @@
 
 import UIKit
 
+// I can't think of a better name
 protocol CreateDataDelegate {
   func createData(sender sender: BlankController)
 }
