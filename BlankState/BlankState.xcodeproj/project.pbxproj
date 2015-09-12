@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		360C1EDA1BA327A800658BA9 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360C1ED91BA327A800658BA9 /* HomeModel.swift */; settings = {ASSET_TAGS = (); }; };
+		360C1EDA1BA327A800658BA9 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360C1ED91BA327A800658BA9 /* HomeModel.swift */; };
 		361EA0B11BA31A8F00BE19B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EA0B01BA31A8F00BE19B2 /* AppDelegate.swift */; };
 		361EA0B31BA31A8F00BE19B2 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EA0B21BA31A8F00BE19B2 /* HomeController.swift */; };
 		361EA0B81BA31A8F00BE19B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 361EA0B61BA31A8F00BE19B2 /* Main.storyboard */; };
 		361EA0BA1BA31A8F00BE19B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 361EA0B91BA31A8F00BE19B2 /* Assets.xcassets */; };
 		361EA0BD1BA31A8F00BE19B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 361EA0BB1BA31A8F00BE19B2 /* LaunchScreen.storyboard */; };
+		6204A51D1BA3E7B600F8E36E /* BlankController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6204A51C1BA3E7B600F8E36E /* BlankController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		361EA0B91BA31A8F00BE19B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		361EA0BC1BA31A8F00BE19B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		361EA0BE1BA31A8F00BE19B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6204A51C1BA3E7B600F8E36E /* BlankController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				361EA0B01BA31A8F00BE19B2 /* AppDelegate.swift */,
+				6204A51C1BA3E7B600F8E36E /* BlankController.swift */,
 				361EA0B21BA31A8F00BE19B2 /* HomeController.swift */,
 				360C1ED91BA327A800658BA9 /* HomeModel.swift */,
 				361EA0B61BA31A8F00BE19B2 /* Main.storyboard */,
@@ -93,6 +96,7 @@
 		361EA0A51BA31A8F00BE19B2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Alexis Digital";
 				TargetAttributes = {
@@ -137,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6204A51D1BA3E7B600F8E36E /* BlankController.swift in Sources */,
 				360C1EDA1BA327A800658BA9 /* HomeModel.swift in Sources */,
 				361EA0B31BA31A8F00BE19B2 /* HomeController.swift in Sources */,
 				361EA0B11BA31A8F00BE19B2 /* AppDelegate.swift in Sources */,

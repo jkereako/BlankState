@@ -13,11 +13,12 @@ class AppDelegate: UIResponder {
   var window: UIWindow?
 }
 
-// MARK: Application delegate
+// MARK: - Application delegate
 extension AppDelegate: UIApplicationDelegate {
-  
-  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    return true
-  }
 
+  func application(application: UIApplication, didFinishLaunchingWithOptions
+    launchOptions: [NSObject: AnyObject]?) -> Bool {
+      return true
+  }
+  
 }

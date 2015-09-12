@@ -8,11 +8,8 @@
 
 import UIKit
 
-class HomeController: UIViewController {
+class HomeController: UITableViewController {
   var model: HomeModel?
-
-  @IBOutlet weak var blankStateView: UIView?
-  @IBOutlet weak var tableView: UITableView?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,20 +21,42 @@ class HomeController: UIViewController {
     model = HomeModel(controller: self)
     tableView?.dataSource = model
   }
+
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+
+    if let aModel = model where aModel.dataSource == nil {
+      let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+
+      guard let blank = storyBoard.instantiateViewControllerWithIdentifier("blank")
+        as? BlankController else {
+          assertionFailure("\n\n  Expected a BlankController.\n\n")
+          return
+      }
+
+      blank.delegate = self
+
+      // Present the view controller WITHOUT animation to make it seem as if the presented view
+      // controller was actually the root view controller.
+      presentViewController(blank, animated: false, completion: nil)
+    }
+  }
 }
 
-extension HomeController {
-  @IBAction func buttonAction(_: UIButton) {
-    guard let unwrapped = model else {
-      assertionFailure("\n\n  model is nil.\n\n")
+extension HomeController: CreateDataDelegate {
+  func createData(sender sender: BlankController) {
+    guard let aModel = model else {
+      assertionFailure("\n\n  Model is nil.\n\n")
       return
     }
 
-    unwrapped.dataSource = ["Lorem ipsum dolor sit amet",
+    // Set the datasource for the model.
+    aModel.dataSource = ["Lorem ipsum dolor sit amet",
       "consectetuer adipiscing elit",
       "Aenean commodo ligula eget dolor",
       "Aenean massa",
-      "Cum sociis natoque penatibus et magnis dis parturient montes",
+      "Cum sociis natoque penatibus",
+      "et magnis dis parturient montes",
       "nascetur ridiculus mus",
       "Donec quam felis",
       "ultricies nec",
@@ -46,29 +65,8 @@ extension HomeController {
       "sem"
     ]
 
-    // In a real project, creating data will take you to another view on the 
-    // view hierarchy. Hence, you probably won't need the animations below.
-    // Instead, you would simply call
-    // `self.blankStateView?.removeFromSuperview()` and call it a day.
-    if let x = unwrapped.dataSource  where x.count > 1 {
-      
-      // Fade the blank state view out
-      UIView.animateWithDuration(0.5,
-        animations: {[unowned self]() in self.blankStateView?.alpha = 0.0},
-        completion: {[unowned self] (aBool: Bool) in
-          self.blankStateView?.removeFromSuperview()
+    tableView.reloadData()
 
-          // Reload the table prior to animation so it's visible as soon as the
-          // table view is faded in.
-          self.tableView?.reloadData()
-
-          // Fade the table view in
-          UIView.animateWithDuration(0.5,
-            animations: {[unowned self]() in self.tableView?.alpha = 1.0},
-            completion: nil
-          )
-        }
-      )
-    }
+    sender.dismissViewControllerAnimated(true, completion: nil)
   }
 }
