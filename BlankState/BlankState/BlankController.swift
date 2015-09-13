@@ -14,6 +14,7 @@ protocol BlankControllerDelegate {
 }
 
 class BlankController: UIViewController {
+  static let storyboardIdentifier = "blank"
   // Uncomment the image and wire it up if you need it.
 //  @IBOutlet weak var image: UIImage?
   @IBOutlet weak var aTitle: UILabel?

@@ -27,8 +27,9 @@ class HomeController: UITableViewController {
     if let aModel = model where aModel.dataSource == nil {
       let storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
 
-      guard let blank = storyBoard.instantiateViewControllerWithIdentifier("blank")
-        as? BlankController else {
+      guard let blank = storyBoard.instantiateViewControllerWithIdentifier(
+        BlankController.storyboardIdentifier
+        ) as? BlankController else {
           assertionFailure("\n\n  Expected a BlankController.\n\n")
           return
       }
