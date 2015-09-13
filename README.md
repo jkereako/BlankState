@@ -42,14 +42,10 @@ func buttonPressedAction(sender sender: BlankController) {
 Repeat these steps as often as necessary when your app encounters a blank state.
 
 # Credit
-The idea for this project came from [DNZEmptyDataSet][repo]. He had a fabulous
-idea, but the code for that project is over 900 lines long and does not contain
-a single Storyboard.
+The idea for this project came from [DNZEmptyDataSet][repo].
 
-The difference between both projects is my version requires that you, the
-developer, adapt my idea to your project whereas [dzenbot's][dzenbot] project
-allows you to use it immediately. His is more user-friendly, but it's also more
-complex. This is always the case with frameworks.
+The difference between both projects is my version requires that you adapt my idea to your project whereas [dzenbot's][dzenbot] project
+allows you to use it immediately. However, his version is complex (it's over 900 lines of code) and hard to maintain, mine can be understood in under 10 minutes.
 
 [dzenbot]: https://github.com/dzenbot
 [repo]: https://github.com/dzenbot/DZNEmptyDataSet
