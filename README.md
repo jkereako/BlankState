@@ -1,30 +1,45 @@
 # The Blank State
-This project is a simple example of how to communicate to users that no data
-exists. All of the views are defined in a Storyboard scene.
+A simple example of how to communicate to users that no data
+exists. All of the views are defined in a Storyboard scene. In the Storyboard lives a lone view of type `BlankController`. This view is not part of the navigation stack and at compile time is not related to any other view. It is meant to be used ad-hoc.
 
 <img src="https://raw.githubusercontent.com/jkereako/blank-state/master/blank-view.png" alt="Document list" width="320" height="568" />
 
 <img src="https://raw.githubusercontent.com/jkereako/blank-state/master/data-view.png" alt="Document list" width="320" height="568" />
 
-The blank state view is intended to be a simple, static view which conveys 1
-message: the app does not have any data to operate on.
-
 # Usage
-As previously mentioned, this is only an example. Use this project as a guide to
-designing a blank state view for your app. Below are some general guidelines to
-follow when creating a blank state view.
+To use the `BlankController`, you must instantiate it in code via a `UIStoryboard` object. Next, set the delegate for the `BlankController` object. This delegate must conform to the `BlankControllerDelegate` protocol which, in this example, defines only 1 method called `buttonPressedAction()`. Finally, present the view controller.
 
-The blank state view must be a `UIView` which is a child view of the main view
-of a `UIViewController`. This must always be the case. Storyboard will not allow
-you to place a `UIView` over a table view in a `UITableViewController` scene.
+You may optionally change the values of whatever `IBOutlets` you define in your version of `BlankController` *after* you have presented the the `BlankController`.
 
-The blank state view must be a sibling of the data view.  Once the data is
-loaded, *remove it from the super view*. Don't just hide the view, remove it to
-free up resources.
+> NOTE: You may only present a view controller in `viewDidAppear(animated:)` or later.
 
-Going forward, when the app has a good supply of data, check for the presence of
-said data and remove the blank state view from the view hierarchy as soon as
-possible.
+```swift
+override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    guard let blank = storyBoard.instantiateViewControllerWithIdentifier(
+      BlankController.storyboardIdentifier
+    ) as? BlankController else {
+      assertionFailure("\n\n  Expected a BlankController.\n\n")
+      return
+    }
+
+    blank.delegate = self
+
+    presentViewController(blank, animated: false, completion: nil)
+
+    blank.message?.text = "Hello from HomeController."
+  }
+```
+
+In this example the delegate method `buttonPressedAction()` is invoked when the button on the blank view is pressed. The instance of `BlankController` is passed to the delegate method making it safe to remove the `BlankController` from the view stack.
+```swift
+func buttonPressedAction(sender sender: BlankController) {
+    // do things
+
+    sender.dismissViewControllerAnimated(true, completion: nil)
+  }
+```
+Repeat these steps as often as necessary when your app encounters a blank state.
 
 # Credit
 The idea for this project came from [DNZEmptyDataSet][repo]. He had a fabulous
