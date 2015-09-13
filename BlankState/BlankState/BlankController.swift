@@ -8,20 +8,25 @@
 
 import UIKit
 
-// I can't think of a better name
-protocol CreateDataDelegate {
-  func createData(sender sender: BlankController)
+// This protocol simply passes the IBAction along.
+protocol BlankControllerDelegate {
+  func buttonPressedAction(sender sender: BlankController)
 }
 
 class BlankController: UIViewController {
-  var delegate: CreateDataDelegate?
+  // Uncomment the image and wire it up if you need it.
+//  @IBOutlet weak var image: UIImage?
+  @IBOutlet weak var aTitle: UILabel?
+  @IBOutlet weak var message: UILabel?
+
+  var delegate: BlankControllerDelegate?
 }
 
 // MARK: - Actions
 extension BlankController {
-  @IBAction func createDataAction(_: UIButton) {
+  @IBAction func buttonPressedAction(_: UIButton) {
     if let aDelegate = delegate {
-      aDelegate.createData(sender: self)
+      aDelegate.buttonPressedAction(sender: self)
     }
   }
 }

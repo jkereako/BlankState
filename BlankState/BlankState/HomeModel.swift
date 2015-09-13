@@ -41,6 +41,5 @@ extension HomeModel: UITableViewDataSource {
     cell.textLabel?.text = data[indexPath.row]
 
     return cell
-
   }
 }
