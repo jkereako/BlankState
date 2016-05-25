@@ -5,9 +5,9 @@ lives a lone view of type `BlankController`. This view is not part of the
 navigation stack and at compile time is not related to any other view. It is
 meant to be used ad-hoc.
 
-<img src="https://raw.githubusercontent.com/jkereako/blank-state/master/blank-view.png" alt="Document list" width="320" height="568" />
+<img src="https://raw.githubusercontent.com/jkereako/BlankState/master/Images/blank-view.png" alt="Blank view" width="320" height="568" />
 
-<img src="https://raw.githubusercontent.com/jkereako/blank-state/master/data-view.png" alt="Document list" width="320" height="568" />
+<img src="https://raw.githubusercontent.com/jkereako/BlankState/master/Images/data-view.png" alt="Content view" width="320" height="568" />
 
 # Usage
 To use the `BlankController`, you must instantiate it in code via a
