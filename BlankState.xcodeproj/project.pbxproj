@@ -42,8 +42,10 @@
 		361EA0A41BA31A8F00BE19B2 = {
 			isa = PBXGroup;
 			children = (
-				361EA0AF1BA31A8F00BE19B2 /* BlankState */,
 				361EA0AE1BA31A8F00BE19B2 /* Products */,
+				36D5588B1CF63F10005F7A45 /* Resources */,
+				361EA0AF1BA31A8F00BE19B2 /* Source */,
+				36D5588C1CF63F1C005F7A45 /* SupportFiles */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,19 +57,33 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		361EA0AF1BA31A8F00BE19B2 /* BlankState */ = {
+		361EA0AF1BA31A8F00BE19B2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				361EA0B01BA31A8F00BE19B2 /* AppDelegate.swift */,
 				6204A51C1BA3E7B600F8E36E /* BlankController.swift */,
 				361EA0B21BA31A8F00BE19B2 /* HomeController.swift */,
 				360C1ED91BA327A800658BA9 /* HomeModel.swift */,
-				361EA0B61BA31A8F00BE19B2 /* Main.storyboard */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		36D5588B1CF63F10005F7A45 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				361EA0B91BA31A8F00BE19B2 /* Assets.xcassets */,
 				361EA0BB1BA31A8F00BE19B2 /* LaunchScreen.storyboard */,
+				361EA0B61BA31A8F00BE19B2 /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		36D5588C1CF63F1C005F7A45 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
 				361EA0BE1BA31A8F00BE19B2 /* Info.plist */,
 			);
-			path = BlankState;
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +173,7 @@
 				361EA0B71BA31A8F00BE19B2 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		361EA0BB1BA31A8F00BE19B2 /* LaunchScreen.storyboard */ = {
@@ -165,6 +182,7 @@
 				361EA0BC1BA31A8F00BE19B2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -255,7 +273,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = BlankState/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.BlankState;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -266,7 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = BlankState/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.BlankState;
 				PRODUCT_NAME = "$(TARGET_NAME)";
